@@ -1,5 +1,8 @@
-version: 2 # use CircleCI 2.0
-    jobs: # a collection of steps
+
+# use CircleCI 2.0
+version: 2
+    # a collection of steps
+    jobs: 
       build: 
         working_directory: ~/goof # directory where steps will run
         docker: # run the steps with Docker
@@ -17,7 +20,7 @@ version: 2 # use CircleCI 2.0
               command: 'sudo npm install -g snyk-to-html'
           - run: # run snyk auth - authenticate snyk use environment variables to add token
               name: snyk auth
-              command: snyk auth $SNYK_TOKEN
+              command: snyk auth d24f029b-f3c4-4adc-853c-12d622ed1faf
           - run: # run snyk monitor
               name: snyk monitor
               command: snyk monitor
