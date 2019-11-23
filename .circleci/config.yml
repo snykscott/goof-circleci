@@ -1,6 +1,7 @@
   version: 2
   jobs:
     build:
+      working_directory: ~/goof-circleci
       docker: 
         - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
       steps:
@@ -15,7 +16,7 @@
             command: 'sudo npm install -g snyk-to-html'
         - run: # run snyk auth - authenticate snyk use environment variables to add token
             name: snyk auth
-            command: snyk auth $SNYK_TOKEN
+            command: snyk auth
         - run: # run snyk monitor
             name: snyk monitor
             command: snyk monitor
