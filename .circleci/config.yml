@@ -17,7 +17,7 @@
         - run: echo $SNYK_TOKEN
         - run: # run snyk auth - authenticate snyk use environment variables to add token
             name: snyk auth
-            command: 'snyk auth' $SNYK_TOKEN
+            command: snyk auth
         - run: # run snyk monitor
             name: snyk monitor
             command: snyk monitor
