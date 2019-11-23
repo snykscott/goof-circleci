@@ -10,14 +10,14 @@
         - run:
             name: update-npm
             command: 'sudo npm install -g snyk'
-        - run: echo "install Snyk"
         - run: # installs json to html mapper
             name: install-snyk-to-html
             command: 'sudo npm install -g snyk-to-html'
         - run: echo $SNYK_TOKEN
-        #- run: # run snyk auth - authenticate snyk use environment variables to add token
-        #    name: snyk auth
-        #    command: snyk auth
+        - run: # run snyk auth - authenticate snyk use environment variables to add token
+            name: snyk auth
+            command: snyk auth d24f029b-f3c4-4adc-853c-12d622ed1faf
+            #command: snyk auth $SNYK_TOKEN
         - run: # run snyk monitor
             name: snyk monitor
             command: snyk monitor
